@@ -5,7 +5,7 @@ import React from 'react'
 const TabsLayout = () => {
     return (
         <Tabs screenOptions={{ headerShown: false }}>
-            <Tabs.Screen name="index" options={{ title: "Home", tabBarIcon: ({ focused }) => IconSymbol({name: "house.fill", color: focused ? "blue" : "gray", size: 24}) }} />
+            <Tabs.Screen name="home" options={{ title: "Home", tabBarIcon: ({ focused }) => IconSymbol({name: "house.fill", color: focused ? "blue" : "gray", size: 24}) }} />
             <Tabs.Screen name="scanner" options={{ title: "Scan QR", tabBarIcon: ({ focused }) => IconSymbol({name: "qrcode.viewfinder", color: focused ? "blue" : "gray", size: 24}) }} />
         </Tabs>
     )
