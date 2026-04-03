@@ -2,14 +2,14 @@ import { useOtp } from '@/context/otp-context';
 import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import {
-    Alert,
-    Keyboard,
-    StyleSheet,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    TouchableWithoutFeedback,
-    View,
+  Alert,
+  Keyboard,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  View,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -43,7 +43,7 @@ export default function AddManualScreen() {
     if (router.canGoBack()) {
       router.back();
     } else {
-      router.replace('/');
+      router.replace('/home');
     }
   };
 
@@ -65,6 +65,9 @@ export default function AddManualScreen() {
             value={label}
             onChangeText={setLabel}
             placeholder="name@email.com"
+            keyboardType="email-address"
+            autoCapitalize="none"
+            autoCorrect={false}
           />
 
           <Text style={styles.label}>Secret</Text>

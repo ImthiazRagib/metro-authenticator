@@ -17,10 +17,9 @@ export default function RootLayout() {
     <OtpProvider>
       <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
         <Stack screenOptions={{ headerBackTitle: '' }}>
-          {/* <Stack.Screen name="(tabs)" options={{ headerShown: false }} /> */}
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
           <Stack.Screen name="index" options={{ headerShown: false }} />
           <Stack.Screen name="addManual" options={{ title: "Add OTP", headerBackTitle: '' }} />
-          <Stack.Screen name="scanner" options={{ title: "Scan OTP", headerBackTitle: '' }} />
           <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
         </Stack>
         <StatusBar style="auto" />
