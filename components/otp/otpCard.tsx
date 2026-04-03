@@ -2,6 +2,7 @@ import { OtpItem } from '@/types/otp';
 import { generateTOTP, getSecondsRemaining } from '@/utils/otp';
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { IconSymbol } from '../ui/icon-symbol';
 
 type Props = {
   item: OtpItem;
@@ -21,7 +22,7 @@ export default function OtpCard({ item, onDelete }: Props) {
         </View>
 
         <TouchableOpacity onPress={onDelete}>
-          <Text style={styles.delete}>Delete</Text>
+          <Text style={styles.delete}>{IconSymbol({ name: 'delete.backward.fill', size: 24, color: 'red' })}</Text>
         </TouchableOpacity>
       </View>
 

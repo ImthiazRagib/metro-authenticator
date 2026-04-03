@@ -18,14 +18,8 @@ export default function HomeScreenR() {
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.actions}>
-                <TouchableOpacity style={styles.primaryBtn} onPress={() => router.navigate('/scanner', {
-
-                })}>
-                    <Text style={styles.primaryBtnText}>Scan QR</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.secondaryBtn} onPress={() => router.navigate('/addManual')}>
-                    <Text style={styles.secondaryBtnText}>Add Manual</Text>
+                <TouchableOpacity style={styles.primaryBtn} onPress={() => router.navigate('/addManual')}>
+                    <Text style={styles.primaryBtnText}>Add Manual</Text>
                 </TouchableOpacity>
             </View>
 

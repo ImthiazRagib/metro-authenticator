@@ -1,12 +1,14 @@
 import { useOtp } from '@/context/otp-context';
 import { parseOtpAuthUrl } from '@/utils/otpAuth';
+import { useIsFocused } from '@react-navigation/native';
 import { CameraView, useCameraPermissions } from 'expo-camera';
 import { useRouter } from 'expo-router';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default function ScannerScreen() {
-    const router = useRouter()
+  const isFocused = useIsFocused();
+  const router = useRouter()
   const { addItem } = useOtp();
   const [permission, requestPermission] = useCameraPermissions();
   const [scanned, setScanned] = useState(false);
@@ -32,6 +34,12 @@ export default function ScannerScreen() {
     ]);
   };
 
+  useEffect(() => {
+    if (!isFocused) {
+      setScanned(false);
+    }
+  }, [isFocused]);
+
   if (!permission) {
     return <View style={styles.center}><Text>Loading camera permission...</Text></View>;
   }
@@ -50,16 +58,21 @@ export default function ScannerScreen() {
 
   return (
     <View style={{ flex: 1 }}>
-      <CameraView
-        style={{ flex: 1 }}
-        facing="back"
-        barcodeScannerSettings={{
-          barcodeTypes: ['qr'],
-        }}
-        onBarcodeScanned={scanned ? undefined : onScanned}
-      />
+      {isFocused ?
+        <CameraView
+          style={{ flex: 1 }}
+          facing="back"
+          barcodeScannerSettings={{
+            barcodeTypes: ['qr'],
+          }}
+          onBarcodeScanned={scanned ? undefined : onScanned}
+        /> :
+        <View style={styles.center}>
+          <Text>Camera paused</Text>
+        </View>
+      }
 
-      {scanned && (
+      {isFocused && scanned && (
         <View style={styles.overlay}>
           <TouchableOpacity style={styles.button} onPress={() => setScanned(false)}>
             <Text style={styles.buttonText}>Scan Again</Text>
