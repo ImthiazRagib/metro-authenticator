@@ -1,50 +1,104 @@
-# Welcome to your Expo app 👋
+# 🔐 React Native Authenticator App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A secure and lightweight OTP (One-Time Password) authenticator application built with **React Native (Expo)**.  
+This app allows users to generate time-based authentication codes (TOTP), scan QR codes, and securely manage OTP accounts on their device.
 
-## Get started
+---
 
-1. Install dependencies
+## 🚀 Features
 
-   ```bash
-   npm install
-   ```
+- 🔐 TOTP (Time-based One-Time Password) generation (RFC 6238)
+- 📷 Scan QR codes to add accounts instantly
+- ➕ Add OTP accounts manually
+- 🔄 Auto-refresh OTP codes every 30 seconds
+- 🗑️ Delete OTP accounts
+- 🔒 Secure local storage using encrypted device storage
+- ⚡ Optimized performance using FlatList (virtualized rendering)
+- 🎨 Clean and responsive UI
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
+## 🛠️ Tech Stack
 
-In the output, you'll find options to open the app in a
+- React Native
+- Expo
+- Expo Router
+- SecureStore (Encrypted storage)
+- Crypto-based TOTP implementation
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 📱 Screens
 
-## Get a fresh project
+- OTP List Screen (Home)
+- Add OTP (Manual Entry)
+- QR Scanner Screen
 
-When you're ready, run:
+---
+
+## ⚙️ Installation & Setup
 
 ```bash
-npm run reset-project
+# Clone the repository
+git clone https://github.com/your-username/rn-authenticator.git
+
+# Navigate to project
+cd rn-authenticator
+
+# Install dependencies
+npm install
+
+# Start the app
+npx expo start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## 📷 QR Code Format Supported
 
-To learn more about developing your project with Expo, look at the following resources:
+This app supports standard OTPAuth URLs:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```
+otpauth://totp/Issuer:Account?secret=XXXX&issuer=Issuer
+```
 
-## Join the community
+---
 
-Join our community of developers creating universal apps.
+## 🔐 Security
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- Secrets are stored using **Expo SecureStore**
+- No external server communication (fully local)
+- No sensitive data leaves the device
+
+---
+
+## 📌 Future Improvements
+
+- 🔐 Biometric authentication (Face ID / Fingerprint)
+- ☁️ Cloud backup & sync
+- 🌙 Dark mode support
+- 📋 Copy OTP to clipboard
+- 🔎 Search and filter accounts
+- 🏷️ Group OTP accounts
+
+---
+
+## 👨‍💻 Author
+
+**Imthiaz Ragib**  
+Frontend / Fullstack Developer  
+
+- GitHub: https://github.com/ImthiazRagib
+- LinkedIn: https://www.linkedin.com/in/eftekar-raghib/
+
+---
+
+## ⭐ Support
+
+If you like this project, consider giving it a ⭐ on GitHub!
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
