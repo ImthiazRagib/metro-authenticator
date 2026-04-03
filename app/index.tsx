@@ -5,6 +5,7 @@ import { HelloWave } from '@/components/hello-wave';
 import ParallaxScrollView from '@/components/parallax-scroll-view';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
+import HomeScreenR from '@/screens/home-screen';
 
 export default function HomeScreen() {
   return (
@@ -21,8 +22,8 @@ export default function HomeScreen() {
         <HelloWave />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText>Your OTP will appear here.</ThemedText>
-        
+        <ThemedText>Your OTP will appear here R.</ThemedText>
+        <HomeScreenR/>
       </ThemedView>
     </ParallaxScrollView>
   );
