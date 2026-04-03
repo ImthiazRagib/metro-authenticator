@@ -43,7 +43,7 @@ export default function AddManualScreen() {
     if (router.canGoBack()) {
       router.back();
     } else {
-      router.replace('/');
+      router.replace('/home');
     }
   };
 

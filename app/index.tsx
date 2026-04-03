@@ -8,7 +8,7 @@ import { ThemedView } from '@/components/themed-view';
 import { useRouter } from 'expo-router';
 
 export default function WelcomeScreen() {
-    const router = useRouter();
+  const router = useRouter();
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
@@ -28,7 +28,7 @@ export default function WelcomeScreen() {
 
       <ThemedView style={styles.primaryBtn}>
         <Pressable style={styles.primaryBtn} onPress={() => {
-            router.push('/home');
+          router.push('/home');
         }}>
           <ThemedText type="defaultSemiBold">Get Started</ThemedText>
         </Pressable>
@@ -55,6 +55,8 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
   primaryBtn: {
+    flex: 1,
+
     padding: 12,
     borderRadius: 8,
     backgroundColor: '#A1CEDC',
